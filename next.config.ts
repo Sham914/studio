@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config) => {
+    config.resolve.fallback = { async_hooks: false };
+
+    return config;
+  },
 };
 
 export default nextConfig;
+
